@@ -1,12 +1,9 @@
 const ColorTheme = require("../models/colorTheme");
 
 class ColorThemeController {
-  // Create a new color theme
   static async createTheme(req, res) {
     try {
       const { themeName, accentColor, buttonColor, hoverColor, baseColor } = req.body;
-
-      // Validate required fields
       if (!themeName || !accentColor || !buttonColor || !hoverColor || !baseColor) {
         return res.status(400).json({ message: "All fields are required" });
       }
@@ -28,7 +25,6 @@ class ColorThemeController {
     }
   }
 
-  // Get all color themes
   static async getAllThemes(req, res) {
     try {
       const themes = await ColorTheme.find();
@@ -38,7 +34,6 @@ class ColorThemeController {
     }
   }
 
-  // Get a single color theme by ID
   static async getThemeById(req, res) {
     try {
       const { id } = req.params;
@@ -54,7 +49,6 @@ class ColorThemeController {
     }
   }
 
-  // Update a color theme by ID
   static async updateTheme(req, res) {
     try {
       const { id } = req.params;
@@ -73,7 +67,6 @@ class ColorThemeController {
     }
   }
 
-  // Delete a color theme by ID
   static async deleteTheme(req, res) {
     try {
       const { id } = req.params;
