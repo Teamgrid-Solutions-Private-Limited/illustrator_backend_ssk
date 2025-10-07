@@ -21,6 +21,22 @@ const colorThemeSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  accentFontColor: {
+    type: String,
+    required: true,
+  },
+  buttonFontColor: {
+    type: String,
+    required: true,
+  },
+  hoverFontColor: {
+    type: String,
+    required: true,
+  },
+  baseFontColor: {
+    type: String,
+    required: true,
+  },
 });
 
 module.exports = mongoose.model("colorThemes", colorThemeSchema);

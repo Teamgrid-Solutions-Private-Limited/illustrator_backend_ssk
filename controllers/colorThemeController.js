@@ -3,8 +3,8 @@ const ColorTheme = require("../models/colorTheme");
 class ColorThemeController {
   static async createTheme(req, res) {
     try {
-      const { themeName, accentColor, buttonColor, hoverColor, baseColor } = req.body;
-      if (!themeName || !accentColor || !buttonColor || !hoverColor || !baseColor) {
+      const { themeName, accentColor, buttonColor, hoverColor, baseColor , accentFontColor, buttonFontColor, hoverFontColor, baseFontColor } = req.body;
+      if (!themeName || !accentColor || !buttonColor || !hoverColor || !baseColor || !accentFontColor || !buttonFontColor || !hoverFontColor || !baseFontColor) {
         return res.status(400).json({ message: "All fields are required" });
       }
 
@@ -14,6 +14,10 @@ class ColorThemeController {
         buttonColor,
         hoverColor,
         baseColor,
+        accentFontColor,
+        buttonFontColor,
+        hoverFontColor,
+        baseFontColor
       });
 
       res.status(201).json({
